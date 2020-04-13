@@ -1,0 +1,20 @@
+<table class = "table table-stripped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>City/Town</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.Personal_Info.FirstName}} {{this.Personal_Info.MiddleName}} {{this.Personal_Info.LastName}}</td>
+            <td>{{this.Username}}</td>
+            <td>{{this.Email}}</td>
+            <td>{{this.City}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

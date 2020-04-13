@@ -1,0 +1,57 @@
+<style>
+    .accordion{
+        display: none;
+    }
+</style>
+<script>
+    function showHide(){
+        var acc = document.getElementById("accordion");
+
+        if(acc.style.display === "none"){
+            acc.style.display="block";
+        }else{
+            acc.style.display="none";
+        }
+    }
+</script>
+
+<form action="/" method="POST" autocomplete="off">
+    <div class="form-group">
+        <label>User Name</label>
+        <input type="text" class="form-control" name="UserName" placeholder="User Name">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="Password" placeholder="Password" > 
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="Email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label>City/Town</label>
+        <input type="text" class="form-control" name="City" placeholder="City/Town">
+    </div>
+    <div class"form-info">
+        <button type="button" id = "personal_btn" class="btn btn-info" onclick="showHide()">Personal Info</button>
+        <div id="accordion">
+            <br />
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" name="FirstName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label>Middle Name</label>
+                <input type="text" class="form-control" name="MiddleName" placeholder="Middle Name">
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" name="LastName" placeholder="Last Name">
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class"form-info">
+        <button type="submit" class="btn btn-info">Submit</button>
+    </div>
+</form>
