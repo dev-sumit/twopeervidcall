@@ -12,10 +12,25 @@ let app = express();
 
 //Set veiw Engine, set layout directory and default layout
 app.set("views", path.join(__dirname, "/views"));
-app.engine("hbs", exphbs({ extname: "hbs", defaultLayout: "mainLayout", layoutsDir: __dirname + "/views/layouts"}));
+app.engine("hbs", exphbs({
+    extname: "hbs", 
+    defaultLayout: "mainLayout", 
+    layoutsDir: __dirname + "/views/layouts",
+
+    //Custom Helpers: for 
+    helpers: {
+        toJSON: function(value){
+            return JSON.stringify(value);
+        }
+    }
+
+    })
+);
 app.set("view engine", "hbs");
 
-//
+app.use(express.static("public"));
+
+//body parser
 app.use(bodyparser.urlencoded({
     extended: true
 }));
@@ -28,5 +43,4 @@ app.listen(3000, () => {
 });
 
 //To configure routing for this application
-//app.use("/users", userController);
 app.use("/", userController);

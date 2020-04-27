@@ -1,0 +1,138 @@
+@charset "utf-8";
+body{
+	margin:0;
+	padding:0;
+	/*background:url(ryan-hafey-mSnfSWBaP_8-unsplash.jpg)  ;*/
+	background-size:Cover;
+	background-position:center;
+	font-family:"Roboto", sans-serif;
+	overflow-x:hidden;
+	
+}
+
+
+header{
+  position:absolute;
+  background: #22242A;
+  padding: 20px;
+  width: 100%;
+  height: 30px;
+}
+
+.left_area h3{
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.left_area span{
+  color: #ff9800;
+}
+
+.content{
+  background:url(/images/bg.jpg)no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 150vh;
+  transition: 0.5s;
+}
+
+.Registration_Box{
+	width: 600px;
+	height: 720px;
+	background:#000113;
+	color:#FFF;
+	top: 60%;
+	left: 50%;
+	position:absolute;
+	transform: translate(-50%,-50%);
+	box-sizing:border-box;
+	padding: 50px 50px 0 50px;
+	border-radius: 5px;
+	opacity:80%;
+	margin-top:80px;
+}
+
+.avatar{
+	width: 100px;
+	height: 105px;
+	border-radius: 50%;
+	position: absolute;
+	top: 80px;
+	left: 430px;
+
+}
+
+h1{
+	margin:0;
+	padding: 0 0 20px 0px;
+	text-align:center;
+	font:25px;
+	margin-top:-20px;
+}
+
+.Registration_Box p{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+}
+
+.Registration_Box input{
+	width:100%;
+	margin-bottom:20px;
+}
+
+.Registration_Box input[type="text"], input[type="password"]
+{
+	border:none;
+	border-bottom: 1px solid #fff;
+	background:transparent;
+	outline:none;
+	height: 40px;
+	color: #fff;
+	font-size:16px;
+}
+
+.Registration_Box input[type="submit"]
+{
+	border:none;
+	outline:none;
+	height: 40px;
+	background: #2f323a;
+	color: #fff;
+	font-size:18px;
+	border-radius:20px;
+	opacity:100%;
+	 transition: 0.5s;
+  transition-property: background;
+}
+
+.Registration_Box input[type="submit"]:hover
+{
+	cursor:pointer;
+	background: #ff9800;
+	/*background:#FF694F;*/
+	color:#000;
+}
+
+.Registration_Box a
+{
+	text-decoration:none;
+	font-size:12px;
+	line-height:20px;
+	color: darkgrey;
+}
+
+.Registration_Box a:hover
+{
+	cursor:pointer;
+	color:#ff2525;
+}/* CSS Document */
+
+
+.Info_form{
+	
+	position:relative;
+}

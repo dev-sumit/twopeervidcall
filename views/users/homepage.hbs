@@ -1,7 +1,148 @@
 <!DOCTYPE html>
-<html>
-    <head></head>
-    <body>
-        <h1>Home Page</h1>
-    </body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cyber Call Home- {{MyName}}</title>
+    <link rel="stylesheet" href="/css/homestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script>
+
+      /*action event functions below*/
+      function myDropDownFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+              var dropdowns = document.getElementsByClassName("dropdown-content");
+              var i;
+              for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                      openDropdown.classList.remove('show');
+                  }
+              }
+          }
+      }
+
+      function SearchInList() {
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("mySearch");
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myContact");
+          li = ul.getElementsByTagName("li");
+          
+          for (i = 0; i < li.length; i++) {
+              a = li[i].getElementsByTagName("a")[0];
+              if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+              } else {
+                  li[i].style.display = "none";
+              }
+          }
+      }
+      /*action event functions below*/
+
+
+      /*Onclick: friends name, display friends info on right panel , below*/
+
+      //friendsList is list of friends
+      let friendsList = {{{ toJSON flist}}};
+      let myName = '{{MyName}}';  
+      //console.log("friendslist fetched");
+
+
+      function displaySelectedFriendsInfo(value){
+        //console.log("Friend Info:" + value);
+        let name = "";
+        let email = "";
+        let city = "";
+        let uname = "reciever";
+
+        let fname = String(value);
+        console.log(value);
+
+        //Get the record of selected user from friendslist
+        console.log(friendsList);
+        let sFriend = friendsList.filter( record => {return record.UserName == fname});
+        let selectedFriend = sFriend[0];
+
+        uname = String(selectedFriend.UserName);  
+        name = selectedFriend.Personal_Info.FirstName + " "+ selectedFriend.Personal_Info.MiddleName +" "+ selectedFriend.Personal_Info.LastName;
+        email = selectedFriend.Email;
+        city = selectedFriend.City;
+
+        let mailToString = "mailto:"+ email + "?Subject=Sent%20From%20VideoConf";
+
+        document.getElementById("name_info").innerText = "Name: " + name;
+        document.getElementById("a_email_info").href= mailToString;
+        document.getElementById("a_email_info").innerHTML = email;
+        document.getElementById("city_info").innerText = "City: "+city;
+        document.getElementById("callPageBtn").href = "/users/videocall/"+myName+"/"+uname;
+        //console.log("Selected friend:"+ name);
+
+      }
+      /*Onclick: friends name, display friends info on right panel , above*/
+
+    </script>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3>Cyber <span>Call</span></h3>
+      </div>
+      <div class="right_area">
+
+    <div class="dropdown" style="float:right">
+      <a class="dropbtn" href="/users/viewProfile/{{MyName}}">View Profile</a>
+    </div>
+        <a href="/" class="logout_btn">Logout</a>
+      </div>
+    </header>
+    
+     
+    <!--header area end-->
+    <!--sidebar start-->
+  <div class="sidebar">
+      <center>
+        <h4><img src="/images/ProfileImage.jpg" alt="" width="-52" class="profile_image">{{MyName}}</h4>
+      </center>
+      <input type="text" id="mySearch" onkeyup="SearchInList()" placeholder="Search Contacts.." title="Type in a category">
+    <div class="scroll">
+      <ul id="myContact"> 
+          {{#each flist}}
+
+              <li><a onclick="displaySelectedFriendsInfo('{{this.UserName}}')" ><span>{{this.Personal_Info.FirstName}} {{this.Personal_Info.LastName}}</span></a></li>
+          {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="Contactbox">
+      <right>
+        <!--<img src="/images/ProfileImage.jpg" alt="" width="-52" class="UserDetails_profileimage">-->
+      </right>
+       <div class="UserDetails">
+         <p id = "name_info">Cyber Call : Unite in cyber space.</p>
+         <a id="a_email_info" href="#" target="_blank"></a>
+         <p id = "city_info"></p>
+        </div>
+          <a class="videoCall-btn" id = "callPageBtn" href="/users/videocall/{{MyName}}/recieve" target="_blank">
+              <i class="fas fa-video"></i>
+          </a>
+          {{!-- <a class="recieveCall-btn" href="#">
+            <i class="fas fa-video"></i>
+          </a> --}}
+        
+    </div>
+    <!--sidebar end-->
+  </body>
 </html>

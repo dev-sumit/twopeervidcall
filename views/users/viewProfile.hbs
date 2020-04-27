@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Personal Info</title>
+	<link rel="stylesheet" type="text/css" href="/css/viewpagestyle.css" />
+</head>
+<body>
+<header>
+    <div class="left_area">
+        <h3>Cyber <span>Call</span></h3>
+    </div>
+    <div class="right_area">
+</header>
+    
+   
+	<div class="Info_Box">
+    	<h1>Personal Info</h1>
+        <div class="Info_form">
+            <div class="form-group">
+                <label>FirstName:</label>
+                <input type="text" placeholder="FirstName" name="FirstName" value = "{{udata.Personal_Info.FirstName}}" readonly />
+            </div>
+
+            <div class="form-group">
+                <label>MiddleName:</label>
+                <input type="text" placeholder="MiddleName" name="MiddleName" value = "{{udata.Personal_Info.MiddleName}}" required />
+            </div>
+            
+            <div class="form-group">
+                <label>LastName:</label>
+            <input type="text" placeholder="LastName" name="LastName" value = "{{udata.Personal_Info.LastName}}" required />
+            </div>
+            
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" placeholder="Email-ID" name="Email" value = "{{udata.Email}}" required />
+            </div>
+            
+            <div class="form-group">
+                <label>City:</label>
+                <input type="text" placeholder="City" name="City" value = "{{udata.City}}" required />
+            </div>
+            
+            <div class="form-group">
+                <label>UserName:</label>
+                <input type="text" placeholder="Username" name="UserName" value = "{{udata.UserName}}" readonly />
+            </div>
+            
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="text" placeholder="Password" name="Password" value = "{{udata.Password}}" required />
+            </div>
+            <a href = "/users/viewProfile" id="save-btn">Update</a>
+        </div>
+</div>
+
+</body>
+</html>
