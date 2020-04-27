@@ -1,57 +1,47 @@
-<style>
-    .accordion{
-        display: none;
-    }
-</style>
-<script>
-    function showHide(){
-        var acc = document.getElementById("accordion");
-
-        if(acc.style.display === "none"){
-            acc.style.display="block";
-        }else{
-            acc.style.display="none";
-        }
-    }
-</script>
-
-<form action="/" method="POST" autocomplete="off">
-    <div class="form-group">
-        <label>User Name</label>
-        <input type="text" class="form-control" name="UserName" placeholder="User Name">
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" name="Password" placeholder="Password" > 
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="text" class="form-control" name="Email" placeholder="Email">
-    </div>
-    <div class="form-group">
-        <label>City/Town</label>
-        <input type="text" class="form-control" name="City" placeholder="City/Town">
-    </div>
-    <div class"form-info">
-        <button type="button" id = "personal_btn" class="btn btn-info" onclick="showHide()">Personal Info</button>
-        <div id="accordion">
-            <br />
-            <div class="form-group">
-                <label>First Name</label>
-                <input type="text" class="form-control" name="FirstName" placeholder="First Name">
-            </div>
-            <div class="form-group">
-                <label>Middle Name</label>
-                <input type="text" class="form-control" name="MiddleName" placeholder="Middle Name">
-            </div>
-            <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" class="form-control" name="LastName" placeholder="Last Name">
-            </div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="/css/registerstyle.css" />
+</head>
+<body>
+    <header>
+        <div class="left_area">
+            <h3>Cyber <span>Call</span></h3>
         </div>
+        <div class="right_area">
+    </header>
+    
+   
+	<div class="Registration_Box">
+        <!--<img src="/images/user.jpg" class="avatar">
+    	input type="file" id="file" accept="image/*" />
+    		<label for="file">
+      			<i class="material-icons">add_photo_alternate</i>Choose Photo
+    	</label-->
+    	<h1>Sign Up</h1>
+        <form action = "/" method = "POST" autocomplete = "off">
+            <div class="Info_form">
+                <p>First Name</p>
+                <input type="text" placeholder="Enter First Name" name="FirstName" required />
+                <p>Middle Name</p>
+                <input type="text" placeholder="Enter Middle Name" name="MiddleName" required />
+                <p>Last Name</p>
+                <input type="text" placeholder="Enter Last Name" name="LastName" required />
+                <p>E-mail ID</p>
+                <input type="text" placeholder="Enter Email-ID" name="Email" required />
+                <p>City</p>
+                <input type="text" placeholder="Enter City" name="City" required />
+                <p>Username</p>
+                <input type="text" placeholder="Enter Username" name="UserName" required />
+                <p>Password</p>
+                <input type="password" placeholder="Enter Password" name="Password" required />
+                <input type="submit" value="Sign up" />
+            </div>
+        </form>
     </div>
-    <br />
-    <div class"form-info">
-        <button type="submit" class="btn btn-info">Submit</button>
-    </div>
-</form>
+    <div class="content"></div>
+
+</body>
+</html>

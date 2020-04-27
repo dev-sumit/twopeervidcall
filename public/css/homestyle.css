@@ -1,0 +1,398 @@
+body{
+margin: 0;
+padding: 0;
+font-family: "Roboto", sans-serif;
+overflow-y:hidden;
+}
+
+header{
+position: fixed;
+background: #22242A;
+padding: 20px;
+width: 100%;
+height: 30px;
+}
+
+.left_area h3{
+color: #fff;
+margin: 0;
+text-transform: uppercase;
+font-size: 22px;
+font-weight: 900;
+}
+
+.left_area span{
+color:  #ff9800;
+}
+
+.logout_btn{
+padding: 5px;
+background: transparent;
+text-decoration: none;
+float: right;
+margin-top: -30px;
+margin-right: 40px;
+border-radius: 2px;
+font-size: 15px;
+font-weight: 600;
+color: #e51937;
+transition: 0.5s;
+transition-property: background;
+border:none;
+outline:none;
+
+}
+
+.logout_btn:hover{
+background:#e51937;
+color:#fff;
+}
+
+/*Sidebar*/
+.sidebar {
+background: #2f323a;
+margin-top: 70px;
+padding-top: 25px;
+position: fixed;
+padding-right:50px;
+
+left: 0;
+width: 250px;
+height: 100%;
+transition: 0.5s;
+transition-property: left;
+}
+
+.sidebar .profile_image{
+width: 100px;
+height: 100px;
+border-radius: 100px;
+margin-bottom: 10px;
+padding-left:5px
+
+}
+
+.sidebar h4{
+color: #ccc;
+margin-top: 0;
+margin-bottom: 20px;
+padding-right:100px;
+
+}
+
+.sidebar a{
+color: #fff;
+display: block;
+width: 255px;
+line-height: 60px;
+text-decoration: none;
+
+box-sizing:content-box;
+transition: 0.5s;
+size: 50%;
+padding-left: 25px;
+transition-property: background;
+}
+
+.sidebar a:hover{
+background:  #ff9800;
+cursor: pointer;
+    color: #000;
+}
+
+.sidebar i{
+padding-right: 50px;
+}
+
+label #sidebar_btn{
+z-index: 1;
+color: #fff;
+position: fixed;
+cursor: pointer;
+left: 10px;
+font-size: 20px;
+margin: 5px 0;
+transition: 0.5s;
+transition-property: color;
+padding-left:270px;
+}
+
+label #sidebar_btn:hover{
+color: #ff9800;
+/*#19B3D3*/
+}
+
+#check:checked ~ .sidebar{
+left: -190px;
+}
+
+#check:checked ~ .sidebar a span{
+display: none;
+}
+
+#check:checked ~ .sidebar a{
+font-size: 20px;
+margin-left: 170px;
+width: 80px;
+
+}
+
+/*Main body*/
+.content{
+margin-left: 250px;
+background:url(/images/pebbles.jpg)no-repeat;
+background-position: center;
+background-size: cover;
+height: 100vh;
+transition: 0.5s;
+}
+
+#check:checked ~ .content{
+margin-left: 60px;
+}
+
+#check{
+display: none;
+}
+
+/*Left Panel Styling Below*/
+/*Contact List*/
+#myContact{
+list-style-type: none;
+padding-left:0px;
+margin: 0;
+
+}
+
+/*Contact search bar*/
+#mySearch {
+width:90%;
+font-size: 20px;
+/*padding: 5px;*/
+border:none;
+/*border-bottom: 1px solid #ddd;*/
+color:#ddd;
+outline:none;
+background:transparent;
+padding-right:80px;
+padding-left:10px;
+
+}
+
+/*Contact Scroll Bar*/
+div.scroll {
+width:300px;
+height:450px;
+overflow:auto;
+}
+
+/*Left Panel Styling Above*/
+
+/*Navigation Bar Styling Below*/
+
+/*Notification DropDown*/
+.dropbtn {
+background-color:transparent;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+padding: 5px;
+text-decoration: none;
+float: right;
+margin-top: -30px;
+margin-right: 120px;
+border-radius: 2px;
+border:none;
+outline:none;
+    transition: 0.5s;
+transition-property: background;
+
+    
+}
+
+.dropbtn:hover {
+    cursor:pointer;
+background-color: #ff9800;
+color:#000;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #2f323a;
+min-width: 160px;
+overflow: auto;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: #ddd;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ff9800;
+    cursor: pointer;
+    color: #000;
+    transition: 0.5s;
+transition-property: background;
+}
+
+.show {display: block;}
+
+
+
+/* Main Search*/
+.search_box{
+    outline:#ff9800;
+    position: absolute;
+    top:50%;
+    left:70%;
+    transform:translate(-50%,-50%);
+    background-color:#22242A;
+    border-radius:40px;
+    padding:5px;
+    
+    float:right;
+}
+
+.search_box:hover{
+    background:#ff9800;
+}
+
+.search_box:hover > .search-text{
+    width:240px;
+    padding: 0 6px;
+    
+}
+
+.search-btn{
+    outline:none;
+    background:none;
+    float:right;
+    padding:0px;
+    color:#ff9800;
+    font-size:16px;
+    transition:40px;
+    height:40px;
+    width:40px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    border-radius:50%;
+}
+
+.search_box:hover .search-btn{
+    background-color:#fff;
+    
+}
+
+.search-text{
+    border:none;
+    background:none;
+    outline:none;
+    float:left;
+    padding:0;
+    color:#2f3640;
+    font-size:16px;
+    transition:0.4s;
+    line-height:40px;
+    width:0px;
+}
+
+/*Navigation Bar Styling Below*/
+
+
+/*Contact Box Styling Below*/
+
+.Contactbox{
+    width: 700px;
+    height: 400px;
+    background:#000113;
+    color:#FFF;
+    top: 50%;
+    left: 60%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing:border-box;
+    padding: 70px 30px;
+    border-radius: 5px;
+    opacity:90%;
+}
+
+.UserDetails{
+    width:450px;
+    font-size:27px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-top:20px;
+    
+}
+
+.Contactbox .UserDetails_profileimage{
+width: 140px;
+height: 140px;
+border-radius: 100px;
+margin-top: -60px;
+margin-left:450px;
+
+}
+
+.videoCall-btn{
+    outline:none;
+    background:white;
+    padding:0px;
+    color:#ff9800;
+    transition:40px;
+    height:55px;
+    width:55px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-top:20px;
+    margin-left:250px;
+    border-radius:50%;
+}
+
+.videoCall-btn:hover{
+    cursor:pointer;
+    color:#08013d;
+    background:#1BA8F3;
+}
+
+
+
+.recieveCall-btn{
+    outline:none;
+    background:white;
+    padding:0px;
+    color:#ff9800;
+    transition:50px;
+    height:55px;
+    width:55px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-left:320px;
+    margin-top:-55px;
+    border-radius:50%;
+}
+
+.recieveCall-btn:hover{
+    cursor:pointer;
+    /* color:#017823; */
+    color:#033802;
+    background:#2BF814;
+}
+
+/*Contact Box Styling above*/
